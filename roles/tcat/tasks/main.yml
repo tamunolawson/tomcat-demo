@@ -5,6 +5,9 @@
       dest: /opt/
     tags: skip_tomcat
 
+  - name: Extract tomcat zip file
+    command:  chdir=/opt /opt/unzip -q /opt/apache-tomcat-9.0.13-deployer.zip creates=/opt/tomcat
+
   - name:  This will install OpenJDK 8 JRE
     yum:
       name: java-1.8.0-openjdk
