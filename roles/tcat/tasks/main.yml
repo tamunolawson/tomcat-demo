@@ -15,6 +15,7 @@
     unarchive:
       src: /opt/tomcat9/apache-tomcat-9.0.13-deployer.zip
       dest: /opt/tomcat9/
+      remote_src: yes
     tags: skip_unarchive
 
   - name:  This will install OpenJDK 8 JRE
