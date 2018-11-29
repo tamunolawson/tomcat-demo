@@ -7,13 +7,13 @@
 
   - name: This will download tomcat9
     get_url:
-      url:  http://www.gtlib.gatech.edu/pub/apache/tomcat/tomcat-9/v9.0.13/bin/apache-tomcat-9.0.13-deployer.zip
+      url:  http://apache.mirrors.ionfish.org/tomcat/tomcat-9/v9.0.13/bin/apache-tomcat-9.0.13-deployer.tar.gz
       dest: /opt/tomcat9/
     tags: skip_download
 
   - name: Extract tomcat zip file
     unarchive:
-      src: /opt/tomcat9/apache-tomcat-9.0.13-deployer.zip
+      src: /opt/tomcat9/apache-tomcat-9.0.13-deployer.tar.gz
       dest: /opt/tomcat9/
       remote_src: yes
     tags: skip_unarchive
