@@ -1,0 +1,7 @@
+---
+  - name: This playbook will install Tomcat & Jenkins
+    hosts:  all
+    become: yest
+
+      roles:
+        - tcat
