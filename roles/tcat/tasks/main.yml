@@ -4,6 +4,7 @@
       url:  http://www.gtlib.gatech.edu/pub/apache/tomcat/tomcat-9/v9.0.13/bin/apache-tomcat-9.0.13-deployer.zip
       dest: /opt/test
       mode: 0770
+    tags: skip_tomcat
 
   - name:  This will install OpenJDK 8 JRE
     yum:
@@ -13,7 +14,7 @@
 
   - name: This will install OpenJDK 8 JDK
     yum:
-      state: java-1.8.0-openjdk-devel
+      name: java-1.8.0-openjdk-devel
       state:  present
     tags: skip_jdk
 
