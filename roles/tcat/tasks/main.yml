@@ -5,8 +5,19 @@
 #      dest: /opt/test
 #      mode: 0770
 #
-  - name: This will run CentOs7 system patches
+  - name: This will run CentOs7 system updates
     yum:
       name: '*'
       state:  latest
     tags: skip_update
+
+  - name:  This will install OpenJDK 8 JRE
+    yum:
+      name: java-1.8.0-openjdk
+      state:  present
+    tags: skip_jre
+
+  - name: This will install OpenJDK 8 JDK
+    yum:
+      state: java-1.8.0-openjdk-devel
+      state:  present 
