@@ -1,6 +1,8 @@
 ---
   - name: Create a directory for file download
-    file: path=/opt/tomcat9 state=directory
+    file:
+      path: /opt/tomcat9 
+      state:  directory
     tags: skip_cdirect
 
   - name: This will download tomcat9
