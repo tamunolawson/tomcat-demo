@@ -1,14 +1,19 @@
 ---
+  - name: Create a directory for file download
+    file: path=/opt/tomcat9 state=directory
+    tags: skip_cdirect
+
   - name: This will download tomcat9
     get_url:
       url:  http://www.gtlib.gatech.edu/pub/apache/tomcat/tomcat-9/v9.0.13/bin/apache-tomcat-9.0.13-deployer.zip
-      dest: /opt/
-    tags: skip_tomcat
+      dest: /opt/tomcat9/
+    tags: skip_download
 
   - name: Extract tomcat zip file
     unarchive:
       src: /opt/apache-tomcat-9.0.13-deployer.zip
       dest: /opt/tomcat9/
+    tags: skip_unarchive
 
   - name:  This will install OpenJDK 8 JRE
     yum:
