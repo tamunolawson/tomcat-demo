@@ -1,7 +1,7 @@
 ---
   - name: Create a directory for file download
     file:
-      path: /opt/tomcat9 
+      path: /opt/tomcat9
       state:  directory
     tags: skip_cdirect
 
@@ -13,7 +13,7 @@
 
   - name: Extract tomcat zip file
     unarchive:
-      src: /opt/apache-tomcat-9.0.13-deployer.zip
+      src: /opt/tomcat9/apache-tomcat-9.0.13-deployer.zip
       dest: /opt/tomcat9/
     tags: skip_unarchive
 
