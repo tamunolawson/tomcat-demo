@@ -12,11 +12,11 @@
     tags: skip_download
 
   - name: Extract tomcat zip file
-#    unarchive:
-    command:  tar xzvf /opt/tomcat9/apache-tomcat-9.0.13.tar.gz
-#      src: /opt/tomcat9/apache-tomcat-9.0.13-deployer.tar.gz
-#      dest: /opt/tomcat9/
-#      remote_src: yes
+    unarchive:
+#    command:  tar xzvf /opt/tomcat9/apache-tomcat-9.0.13.tar.gz
+      src: /opt/tomcat9/apache-tomcat-9.0.13.tar.gz
+      dest: /opt/tomcat9/
+      remote_src: yes
     tags: skip_unarchive
 
   - name:  This will install OpenJDK 8 JRE
