@@ -1,29 +1,26 @@
 ---
-  - name: Create a directory for file download
+  - name: Create tomcat9 directory
     file:
       path: /opt/tomcat9
       state:  directory
-    tags: skip_cdirect
+    tags: skip_cdirectory
 
-  - name: This will download tomcat9
+  - name: Download current release of tomcat9
     get_url:
       url:  http://apache.mirrors.ionfish.org/tomcat/tomcat-9/v9.0.13/bin/apache-tomcat-9.0.13.tar.gz
-      dest: /opt/tomcat9/
+      dest: /opt/
     tags: skip_download
 
-  - name: Extract tomcat zip file
+  - name: Extract tomcat tar.zip file
     unarchive:
-#    command:  tar xzvf /opt/tomcat9/apache-tomcat-9.0.13.tar.gz
-      src: /opt/tomcat9/apache-tomcat-9.0.13.tar.gz
+      src: /opt/apache-tomcat-9.0.13.tar.gz
       dest: /opt/tomcat9/
       remote_src: yes
     tags: skip_unarchive
 
-  - name: This will copy the extracted file to Tomcat9 Directory
-    command: mv /opt/tomcat9/apache-tomcat-9.0.13 /opt/tomcat9/tomacat
-#      remote_src: yes
-    tags: skip_copy
-
+#  - name: Move extracted directory to Tomcat9 Directory
+#    command: mv /opt/tomcat9/apache-tomcat-9.0.13 /opt/tomcat9/tomcat
+#    tags: skip_copy
 
   - name:  This will install OpenJDK 8 JRE
     yum:
