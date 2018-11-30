@@ -21,7 +21,7 @@
 
   - name: This will copy the extracted file to Tomcat9 Directory
     copy:
-      src:  /opt/tomcat9/apache-tomcat-9.0.13/
+      src:  /opt/tomcat9/apache-tomcat-9.0.13/'*'
       dest: /opt/tomcat9/
 #      remote_src: yes
     tags: skip_copy
